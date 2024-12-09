@@ -6,6 +6,8 @@ const store = (set,get)=> ({
     userChoice: '',
     houseChoice : '',
     result : '',
+    rules: false,
+    setRules: () => set((prevState) => ({ ...prevState, rules: !prevState.rules })),
     setUserChoice: (value)=>{
         set({userChoice: value});
         get().winner();

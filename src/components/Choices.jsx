@@ -6,7 +6,7 @@ import { useStore } from './store';
 import { useNavigate } from 'react-router-dom';
 
 function Choices() {
-    const {setUserChoice} = useStore();
+    const {setUserChoice, setRules} = useStore();
     const navigate = useNavigate();
 
     const handleWinner = (choice)=>{
@@ -17,25 +17,26 @@ function Choices() {
     <div className='w-full h-full p-5 flex flex-col items-center gap-28'>
         <div className='flex justify-between w-2/5 p-5'>
             <div className='bg-rock w-[140px] h-[140px] flex justify-center items-center rounded-full z-10 cursor-pointer' onClick={()=>handleWinner('rock')}>
-                <div className='bg-circle w-[110px] h-[110px] flex justify-center items-center rounded-full hover:border-4 hover:border-outline'>
+                <div className='bg-circle w-[110px] h-[110px] flex justify-center items-center rounded-full z-20 hover:border-4 hover:border-outline'>
                 <img src={rock} alt="rock"></img>
                 </div>
             </div>
-            <div className='bg-paper w-[140px] h-[140px] flex justify-center items-center rounded-full z-10' onClick={()=>handleWinner('paper')}>
-                <div className='bg-circle w-[110px] h-[110px] flex justify-center items-center rounded-full hover:border-4 hover:border-outline'>
+            <div className='bg-paper w-[140px] h-[140px] flex justify-center items-center rounded-full z-10 cursor-pointer' onClick={()=>handleWinner('paper')}>
+                <div className='bg-circle w-[110px] h-[110px] flex justify-center items-center rounded-full z-20 hover:border-4 hover:border-outline'>
                 <img src={paper} alt="paper"></img>
                 </div>
             </div>
         </div>
         <div className='flex justify-center'>
-            <div className='bg-scissors w-[140px] h-[140px] flex justify-center items-center rounded-full z-10' onClick={()=>handleWinner('scissors')}>
-                <div className='bg-circle w-[110px] h-[110px] flex justify-center items-center rounded-full hover:border-4 hover:border-outline'>
+            <div className='bg-scissors w-[140px] h-[140px] flex justify-center items-center rounded-full z-10 cursor-pointer' onClick={()=>handleWinner('scissors')}>
+                <div className='bg-circle w-[110px] h-[110px] flex justify-center items-center rounded-full  z-20 hover:border-4 hover:border-outline'>
                 <img src={scissors} alt ="scissors"></img>
                 </div>
             </div>
         </div>
         <div className='bg-triangle bg-center bg-no-repeat w-full h-full absolute top-5 -z-1'>
         </div>
+        <button className='bg-white w-fit h-fit p-3 rounded-lg shadow-lg m-2 cursor-pointer hover:text-2xl font-bold ml-auto z-30' onClick={()=> setRules()}>Rules</button>
     </div>
   )
 }
