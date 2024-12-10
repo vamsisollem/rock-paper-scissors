@@ -12,11 +12,11 @@ function App() {
   const {score,rules, setRules} = useStore();
   return (
     <div className='bg-background min-h-screen flex flex-col items-center p-5'>
-      <div className='border-outline border-2 flex w-2/5 h-fit rounded-lg p-3 items-center'>
-        <div className='w-3/4'><img src={logo} alt='rock paper scissors' className='w-fit h-fit'></img></div>
-        <div className='bg-white w-1/4 h-fit flex flex-col  items-center rounded-lg'>
-          <h2 className='text-2l text-score p-1'>Score</h2>
-          <span className='text-6xl text-darkText p-2'>{score}</span>
+      <div className='border-outline border-2 flex justify-between w-full h-fit rounded-lg items-center p-3 md:w-3/5'>
+        <div className='w-2/5'><img src={logo} alt='rock paper scissors' className='w-fit h-fit'></img></div>
+        <div className='bg-white w-1/5 h-full flex flex-col  items-center rounded-lg'>
+          <h2 className='text-2l text-score p-2 sm: text-1l'>Score</h2>
+          <span className='text-6xl text-darkText p-3 sm: text-4xl'>{score}</span>
         </div>
       </div>
   {rules === false ? (
